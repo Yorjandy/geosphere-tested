@@ -1,27 +1,35 @@
 <script setup>
-import { Map } from 'leaflet';
-import { onMounted, ref } from 'vue';
-
-onMounted(()=>{
-   const map = new Map("map");
-})
+  import MapComponent from './components/Views/MapComponent.vue';
 </script>
 
 <template>
-  <main>
-    <h1>Plantilla de Geosphere lista para el trabajo</h1>
-    <h4>Librerias y dependencias a usar </h4>
-    <h5>leaflet</h5>
-    <p>trabajo con informacion geografica</p>
-    <h5>vitest</h5>
-    <p> unit testing para funcionalidades y componentes</p>
-    <div id="map"></div>
+  <main class="app-container" >
+      <MapComponent></MapComponent>
   </main>
 </template>
 
 <style>
-  #map{
-    height: 300px;
-    width: 300px;
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .app-container{
+    width: 1250px;
+    margin: auto;
+    position: relative;
+  }
+  @media screen and (max-width: 800px){
+    .app-container{
+      width: 600px;
+      margin: auto;
+    }
+  }
+  @media screen and (max-width: 400px){
+      .app-container{
+        width: 400px;
+        margin: auto;
+      }
   }
 </style>
